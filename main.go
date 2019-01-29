@@ -2,9 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
-	// use ":=" only when defining a new variable
-	card := "Ace of Spades"
+func newCard() string {
+	return "Ace of Spades"
+}
 
-	fmt.Println(card)
+func main() {
+	cards := []string{newCard(), newCard()}
+	cards = append(cards, "Another One")
+
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
