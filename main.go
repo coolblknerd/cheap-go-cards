@@ -5,8 +5,10 @@ func newCard() string {
 }
 
 func main() {
-	cards := deck{newCard(), newCard()}
-	cards = append(cards, "Another One")
+	cards := newDeck()
 
-	cards.print()
+	hand, remainingDeck := deal(cards, 7)
+
+	hand.print()
+	remainingDeck.print()
 }
